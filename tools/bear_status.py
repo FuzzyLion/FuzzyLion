@@ -63,12 +63,19 @@ def status(pushed, now):
 
 
 def picture(state):
-    # The link sits inside <picture> around the <img>: GitHub breaks an <a> wrapped around <picture>.
+    # The <img> has to be a direct child of <picture>, or browsers ignore the dark <source> and the dark
+    # theme gets the light picture (seen live on 2026-11-20). So the link goes around <picture>, inside a
+    # <div> that keeps the whole thing one HTML block, the way Tailwind's and Next.js's READMEs do it.
+    # The link is absolute because GitHub leaves relative hrefs here unrewritten, which 404 on the profile.
     return (
+        "<div>\n"
+        f'<a href="https://github.com/{USER}/{USER}/blob/main/bear/{state}.jpg">\n'
         "<picture>\n"
         f'  <source media="(prefers-color-scheme: dark)" srcset="bear/{state}-dark.png">\n'
-        f'  <a href="bear/{state}.jpg"><img align="right" width="320" src="bear/{state}-light.png" alt="{ALT[state]}"></a>\n'
-        "</picture>"
+        f'  <img align="right" width="320" src="bear/{state}-light.png" alt="{ALT[state]}">\n'
+        "</picture>\n"
+        "</a>\n"
+        "</div>"
     )
 
 
