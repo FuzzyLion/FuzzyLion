@@ -3,7 +3,7 @@
 <a href="https://github.com/FuzzyLion/FuzzyLion/blob/main/bear/awake.jpg">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="bear/awake-dark.png">
-  <img align="right" width="320" src="bear/awake-light.png" alt="A white plush bear in a grey scarf and a blue sweater, holding a steaming mug by a rainy window at night, drawn in black and white dots.">
+  <img align="right" width="38%" src="bear/awake-light.png" alt="A white plush bear in a grey scarf and a blue sweater, holding a steaming mug by a rainy window at night, drawn in black and white dots.">
 </picture>
 </a>
 </div>

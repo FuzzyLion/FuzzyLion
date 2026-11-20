@@ -67,12 +67,15 @@ def picture(state):
     # theme gets the light picture (seen live on 2026-11-20). So the link goes around <picture>, inside a
     # <div> that keeps the whole thing one HTML block, the way Tailwind's and Next.js's READMEs do it.
     # The link is absolute because GitHub leaves relative hrefs here unrewritten, which 404 on the profile.
+    # The width is a share of the README, not 320 px: on a ~400 px phone a fixed 320 px float left a
+    # 60 px strip, and with GitHub's overflow-wrap: break-word the app stacked the title one letter per
+    # line. 38% is about 320 px on desktop (846 px README) and about 150 px on a phone.
     return (
         "<div>\n"
         f'<a href="https://github.com/{USER}/{USER}/blob/main/bear/{state}.jpg">\n'
         "<picture>\n"
         f'  <source media="(prefers-color-scheme: dark)" srcset="bear/{state}-dark.png">\n'
-        f'  <img align="right" width="320" src="bear/{state}-light.png" alt="{ALT[state]}">\n'
+        f'  <img align="right" width="38%" src="bear/{state}-light.png" alt="{ALT[state]}">\n'
         "</picture>\n"
         "</a>\n"
         "</div>"
