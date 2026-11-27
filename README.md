@@ -14,7 +14,7 @@
 I'm doing my master's in Darmstadt and building a little RISC-V CPU on the side.
 
 <!-- bear-status -->
-Bear status: awake. Last push on 26 Nov.
+Bear status: awake. Last push on 27 Nov.
 <!-- /bear-status -->
 
 Everything else is in my repos and on [qi-wu.dev](https://qi-wu.dev).
